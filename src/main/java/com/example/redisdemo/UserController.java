@@ -10,21 +10,16 @@ import org.springframework.web.bind.annotation.RestController;
  * @author sunyajun 2018/6/22 14:49
  */
 @RestController
-@RequestMapping("/happiness")
-public class HappinessController {
+@RequestMapping("/user")
+public class UserController {
     @Autowired
-    private HappinessService happinessService;
+    private UserService happinessService;
 
     @RequestMapping("/query")
-    public Happiness testQuery(){
-        Happiness happiness = happinessService.selectService("北京");
+    public User testQuery(){
+        User happiness = happinessService.selectService("王五");
         System.out.println(happiness);
         return happiness;
     }
 
-    @RequestMapping("/insert")
-    public Happiness testInsert(){
-        happinessService.insertService();
-        return happinessService.selectService("西安");
-    }
 }
